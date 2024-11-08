@@ -6,6 +6,12 @@ body {
 	margin: 0;
 	min-width: 320px;
 }
+
+/* nav mobile burger menu icon */
+#burger {
+	cursor: pointer;
+}
+
 h1 {
 	font-family: 'Rancho', sans-serif;
 	font-size: 95px;
@@ -42,7 +48,7 @@ a {
 	margin-left: auto;
 }
 .button {
-	background-color: #007073;
+	background-color: #a3825d;
 	color: #fff;
 	padding: .8em 1em;
 	border-radius: 4px;
@@ -59,6 +65,9 @@ header {
 	padding: 20px;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+
+	/* border: 2px dashed lime; */
 }
 .logo {
 	width: 125px;
@@ -68,17 +77,45 @@ nav {
 	margin-left: auto;
 	font-size: 15px;
 	text-transform: uppercase;
+	display: none; /* hides nav in mobile view */
+
+	/* border: 3px dashed coral; */
 }
 nav ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	overflow-x: hidden;
+	width:800px ;
+	
+	
 }
+
 nav li {
-	margin-left: 10px;
+	margin: 0 10px;
+	/* background-color: #3d1c07; */
+	width: 100%;
+	color: #fff;
+	padding: 5px;
+	font-weight: bold;
+	font-size: 16px;
+
 }
+
+/* when the nav checkbox is checked, target the nav */
+/* cb is checked/unchecked by clicking the burger icon which is inside the label */
+#nav-cb:checked ~ nav{
+	display: block; /* show nav when cb is checked */
+	position: absolute;
+	top: 70px;
+	height: auto;
+	overflow-y: auto;
+}
+
 .hero {
 	text-align: center;
 	padding: 10%;
@@ -109,4 +146,28 @@ main {
 	.logo {
 		width: 160px;
 	}
+}
+
+/* show nav, hide burger on wider screens */
+@media (min-width: 700px) {
+	nav {
+		display: block;
+		position: static;
+	}
+
+	nav ul {
+		flex-direction: row;
+		width: auto;
+	}
+
+	#burger {
+		display: none;
+	}
+
+	#nav-cb:checked ~ nav{
+		display: block; /* show nav when cb is checked */
+		position: static;
+		top: 70px;
+	}
+
 }

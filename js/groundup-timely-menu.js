@@ -35,7 +35,7 @@ currentMenuDiv.innerHTML = mealLink;
 // function runs when Dark Mode checkbox is checked or unchecked
 // get the checkbox:
 // let ckbox = document.getElementById('cb');
-let ckbox = document.querySelector('input');
+let ckbox = document.querySelector('#cb');
 // instruct the checkbox to call function whenever the checkbox is checked or unchecked
 ckbox.addEventListener('change', toggleDarkMode);
 function toggleDarkMode() {
@@ -46,9 +46,11 @@ function toggleDarkMode() {
     if (this.checked) {
         document.body.style.backgroundColor = '#3d1c07';
         document.body.style.color = '#ffc793';
+        document.body.querySelector('#light-label').style.color= '#ffc793';
     } else {
         document.body.style.backgroundColor = '#ffe4cb';
         document.body.style.color = '#3d1c07';
+        document.body.querySelector('#light-label').style.color= '#3d1c07';
     }
 }
 

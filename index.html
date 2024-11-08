@@ -14,17 +14,31 @@
 
 		<header>
 			<a href="index.html"><img src="img/logo.svg" class="logo" alt="Ground Up"></a>
+			
+			<li>
+				<input type="checkbox" id="cb" checked style="position: absolute;top:-100px">
+				<label for="cb"  style="margin-right: 0px;" id="light-label">Light Mode Toggle</label>
+			</li>
+
+			<!-- hamburger menu icon -->
+			<label for="nav-cb">
+				<img src="img/menu-icon.svg" id="burger">
+			</label>
+			<input type="checkbox" id="nav-cb" style="position:absolute; right:500px;top:-500px">
+			<!-- to use ~ sibling selector in css, the nav must be the next sibling after the checkbox (this lets the checkbox state target the nav) -->
+			
+
+
 			<nav>
 				<ul>
-					<li>
-						<input type="checkbox" id="cb" checked>
-						<label for="cb" style="margin-right: 20px;">Dark Mode</label>
-					</li>
+					
 
-					<li><a href="about.html">About Us</a></li>
-					<li><a href="menu.html" class="button">Menu</a></li>
+					<li class="button"><a href="about.html">About Us</a></li>
+					<li class="button"><a href="menu.html">Contact</a></li>
+					<li class="button"><a href="menu.html">Menu</a></li>
 				</ul>
 			</nav>
+
 		</header>
 
 		<div class="hero homepage">
